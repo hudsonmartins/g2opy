@@ -95,6 +95,13 @@ void declareTypesSixDofExpmap(py::module & m) {
         .def("is_depth_positive", &EdgeSE3ProjectXYZOnlyPose::isDepthPositive)
         .def("linearize_oplus", &EdgeSE3ProjectXYZOnlyPose::linearizeOplus)
         .def("cam_project", &EdgeSE3ProjectXYZOnlyPose::cam_project)
+        //https://github.com/uoip/g2opy/issues/31
+        .def_readwrite("fx", &EdgeSE3ProjectXYZOnlyPose::fx)
+        .def_readwrite("fy", &EdgeSE3ProjectXYZOnlyPose::fy)
+        .def_readwrite("cx", &EdgeSE3ProjectXYZOnlyPose::cx)
+        .def_readwrite("cy", &EdgeSE3ProjectXYZOnlyPose::cy)
+        .def_readwrite("Xw", &EdgeSE3ProjectXYZOnlyPose::Xw)
+
     ;
 
 
